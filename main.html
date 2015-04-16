@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Belt</title>
+	<style>
+		main {
+			height: 200px;
+			background: blue;
+		}
+
+		.green {
+			background: green;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		Hello World
+	</main>
+</body>
+<script src="src/Belt.js"></script>
+<script src="src/classUtility.js"></script>
+<script>
+	(function(){
+		Belt('main').addClass('green');
+	})();
+</script>
+</html>
