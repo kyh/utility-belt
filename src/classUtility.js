@@ -6,39 +6,39 @@
   }
 
   if('classList' in document.documentElement){
-    HTMLElement.prototype.hasClass = function(c) {
-      return this.classList.contains(c);
+    BeltElement.prototype.hasClass = function(c) {
+      return this.el.classList.contains(c);
     };
 
-    HTMLElement.prototype.addClass = function(c) {
-      this.classList.add(c);
+    BeltElement.prototype.addClass = function(c) {
+      this.el.classList.add(c);
       return this;
     };
 
-    HTMLElement.prototype.removeClass = function(c) {
-      this.classList.remove(c);
+    BeltElement.prototype.removeClass = function(c) {
+      this.el.classList.remove(c);
       return this;
     };
   } else {
-    HTMLElement.prototype.hasClass = function(c) {
-      return classReg(c).test(this.className);
+    BeltElement.prototype.hasClass = function(c) {
+      return classReg(c).test(this.el.className);
     };
 
-    HTMLElement.prototype.addClass = function(c) {
-      if ( !this.hasClass(c) ) {
-        this.className = this.className + ' ' + c;
+    BeltElement.prototype.addClass = function(c) {
+      if ( !this.el.hasClass(c) ) {
+        this.el.className = this.el.className + ' ' + c;
         return this;
       }
     };
 
-    HTMLElement.prototype.removeClass = function(c) {
-      this.className = this.className.replace(classReg(c), ' ');
+    BeltElement.prototype.removeClass = function(c) {
+      this.el.className = this.el.className.replace(classReg(c), ' ');
       return this;
     };
   }
 
-  HTMLElement.prototype.toggleClass = function(c) {
-    var fn = this.hasClass(c) ? this.removeClass : this.addClass;
+  BeltElement.prototype.toggleClass = function(c) {
+    var fn = this.el.hasClass(c) ? this.el.removeClass : this.el.addClass;
     fn(c);
     return this;
   };
