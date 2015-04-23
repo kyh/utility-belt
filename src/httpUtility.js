@@ -1,7 +1,7 @@
-(function(win){
+(function(){
   'use strict';
 
-  win.Ajax = function(settings){
+  Belt.Ajax = function(settings){
 		return new XMLHttpRequest();
   };
 
@@ -36,4 +36,4 @@
 		return this.onerror(callback);
   };
 
-})(window);
+})();
