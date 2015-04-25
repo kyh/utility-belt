@@ -1,4 +1,4 @@
 utility-belt
 ============
 
-Adding basic utility functionality for native Javascript to help with DOM manipulations
+Adding basic utility functionalities to help with DOM manipulations
